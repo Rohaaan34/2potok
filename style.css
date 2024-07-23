@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/* Основные стили */
+body {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+}
+
+header {
+    background-color: #333;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.hive{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.menu-icon::before {
+    content: "\2630"; /* Unicode символ для иконки меню */
+}
+
+/* Стили для мобильного меню */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Стили для секций */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* Круглые углы для секций */
+}
+
+/* Добавляем эффект увеличения при наведении */
+section:hover {
+    transform: scale(1.05); /* Увеличение на 5% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+}
+
+section:nth-of-type(even) {
+    background-color: #f4f4f4;
+}
+
+/* Стили для блока с изображением и описанием */
+.featured {
+    background-color: #222;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deni{
+    width: 400px;
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured img {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Неоновая подсветка */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-description {
+    margin-top: 20px;
+}
+
+.featured-description h3 {
+    font-size: 24px;
+    color: #00ff00; /* Зеленый цвет для текста */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Неоновое свечение для текста */
+}
+
+.featured-description p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* Эффект увеличения для блока с изображением и описанием */
+.featured:hover .featured-content {
+    transform: scale(1.0); /* Увеличение на 5% */
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5); /* Тень с зеленым свечением */
+}
+
+.featured:hover img {
+    transform: scale(1.0); /* Увеличение на 5% */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Увеличенное неоновое свечение */
+}
+
+/* Стили для блока с описанием сайта */
+.description {
+    background-color: #f5f5dc; /* Бежевый фон */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.description-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.description-text {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.description-text h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.description-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.description-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Стили для галереи */
+.gallery {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.gallery h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.gallery-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px; /* Отступ снизу для полосы прокрутки */
+}
+
+.deni-st{
+    width: 300px;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    margin: 0 15px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Увеличение на 5% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+}
+
+/* Стили для блока с видео */
+.video-section {
+    padding: 60px 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.video-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.video-wrapper {
+    flex: 1;
+    max-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легкая тень */
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 340px;
+}
+
+.video-text {
+    flex: 1;
+    max-width: 500px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легкая тень */
+}
+
+.video-text h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #00ff00; /* Зеленый цвет для заголовка */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Неоновое свечение для заголовка */
+}
+
+.video-text p {
+    font-size: 16px;
+    color: gold;
+    line-height: 1.6;
+}
+
+/* Стили для блока с видео-галереей */
+.video-gallery {
+    padding: 60px 20px;
+    background-color: #e0e0e0;
+}
+
+
+.video-gallery h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.mansml{
+    width: 300px;
+}
+
+.video-gallery-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.ila{
+    width: 200px;
+}
+.eng{
+    width: 300px;
+}
+.video-gallery-item {
+    flex: 1 1 calc(20% - 20px); /* 5 видео в строке */
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+.video-gallery-item iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.video-gallery-item .video-text {
+    padding: 15px;
+    text-align: center;
+}
+
+.video-gallery-item .video-text h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.video-gallery-item .video-text p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+ body {
+   
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */}
+/* Стили для блока с природной тематикой */
+.nature-themed {
+    position: relative;
+    padding: 60px 20px;
+    background-color: #a8d5ba; /* Зеленый цвет природы */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Солнечные блики */
+.sun-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.3), rgba(255, 255, 0, 0) 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: rotate-rays 20s linear infinite;
+}
+
+@keyframes rotate-rays {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Контейнер для фото и текста */
+.nature-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Стили для фото */
+.nature-photo {
+    max-width: 20%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Стили для текста */
+.nature-text h2 {
+    font-size: 24px;
+    color: #2f855a;
+    margin-bottom: 10px;
+}
+
+.nature-text p {
+    font-size: 16px;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* Стили для блока с профессионально стилизованным текстом */
+.styled-text {
+    padding: 60px 20px;
+    background-color: #1e3a8a; /* Синий цвет */
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+/* Контейнер для текста */
+.text-container {
+    max-width: 800px;
+}
+
+/* Основной текст */
+.main-text {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Подтекст */
+.sub-text {
+    font-size: 18px;
+    color: #d1d1d1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 40px 20px;
+    border-top: 2px solid #f00;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-links ul li {
+    margin: 0 15px;
+}
+
+.footer-links ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-links ul li a:hover {
+    color: #f00;
+}
+
+.footer-social {
+    display: flex;
+}
+
+.footer-social .social-icon {
+    margin-right: 15px;
+}
+
+.footer-social .social-icon img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+.hiveboot{
+    border-radius: 20px;
+}
+.scroll-container {
+    background-color: wheat;
+    width: 100%;
+    height: 300px; /* Высота контейнера */
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрирование изображений по вертикали внизу */
+    border: 2px solid #000;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+
+.image-wrapper {
+    text-align: center;
+    margin-right: 20px; /* Промежуток между блоками изображений */
+}
+
+.image-wrapper:last-child {
+    margin-right: 0; /* Убираем правый промежуток у последнего блока */
+}
+
+.scroll-image {
+    border-radius: 20px;
+    max-height: 200px; /* Максимальная высота изображений */
+    width: auto; /* Автоматическая ширина для сохранения пропорций */
+}
+
+
+.image-caption {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #333;
+}
